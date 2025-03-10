@@ -54,7 +54,7 @@ const App = () => {
     
         let response=await fetch(newapi);
         let data = await response.json();
-        setrate([amount]*data[from.toLowerCase()][to.toLowerCase()]);
+        setrate(amount*data[from.toLowerCase()][to.toLowerCase()]);
         setdate(data.date)
         
         },
@@ -62,75 +62,64 @@ const App = () => {
     )
 
     useEffect(()=>{Convertcurrency()},[amount,from,to])
-
-return (
-    <main className='flex justify-center  bg-black items-center min-h-screen  bg-cover bg-center' style={{ backgroundImage: 'url(https://www.pixelstalk.net/wp-content/uploads/2016/10/Dollar-Sign-HD-Wallpapers.jpg)' }}>    
-        
-        <form action="#" className='p-1 backdrop-blur-sm border-white flex flex-col justify-around border-2 h-85 w-60 box-border '>
-
-            <h3 className=' text-white text-center text-2xl mt-3.5 font-medium'>Currency-Converter</h3>
-            <div className='  border-white border-b-2 w-50  mt-1 ml-4'/>
+    return (
+        <main className='flex justify-center bg-black items-center min-h-screen bg-cover bg-center' style={{ backgroundImage: 'url(https://www.pixelstalk.net/wp-content/uploads/2016/10/Dollar-Sign-HD-Wallpapers.jpg)' }}>
+          <form action="#" className='p-4 backdrop-blur-sm border-white flex flex-col justify-around border-2 w-full sm:w-80 md:w-96 lg:w-1/3 box-border'>
+            <h3 className='text-white text-center text-2xl mt-3.5 font-medium'>Currency-Converter</h3>
+            <div className='border-white border-b-2 w-full mt-1 ml-4' />
+            
             <div name='amount' className='m-1 mr-0.5'>
-                <p className=' text-white sfont-medium'>Enter Amount</p>
-                <input className='  border-white border-2 rounded p-0.5'  placeholder='Enter Amount..' type="number" value={amount} onChange={fixamt}/>  
+              <p className='text-white font-medium'>Enter Amount</p>
+              <input
+                className='border-white border-2 rounded p-0.5 w-full'
+                placeholder='Enter Amount..'
+                type="number"
+                value={amount}
+                onChange={fixamt}
+              />
             </div>
-
-        
-            <div className='  flex p-1 justify-between  '>
-            
-                <div  className='' >
-                    <p className=' text-white text-left font-medium'>FROM</p>
-
-                    <div name='select' className=' p-0.5 border-white border-2 flex rounded  '> 
-                        
-                        <img className='h-6 w-6' src={FromImg}/>
-                        
-                        <select  className='text-black font-medium border-none' name='from' id="" value={from} onChange={Getfrom} >
-                        {Object.keys(CountryList).map((CountryList)=>(
-                            
-                            <option key={CountryList}  value={CountryList}  >
-                            {CountryList}
-                            
-                            </option>
-                        ))
-                        }           
-                        </select>
-                    </div>
+    
+            <div className='flex p-1 justify-between'>
+              <div>
+                <p className='text-white text-left font-medium'>FROM</p>
+                <div name='select' className='p-0.5 border-white border-2 flex rounded'>
+                  <img className='h-6 w-6' src={FromImg} alt="From Flag" />
+                  <select className='text-black font-medium border-none w-full' name='from' value={from} onChange={Getfrom}>
+                    {Object.keys(CountryList).map((countryCode) => (
+                      <option key={countryCode} value={countryCode}>
+                        {countryCode}
+                      </option>
+                    ))}
+                  </select>
                 </div>
-                <div className='flex mt-8 '>< ImArrowRight className='fill-white'/></div>
-                <div  className=''>
-                    <p className='text-left font-medium text-white'>TO</p>
-                    <div name=' select' className=' p-0.5  border-white border-2 flex rounded'> 
-                        <img className='h-6 w-6' src={TOImg}/>
-                        
-                        <select  className=' border-none text-black font-medium' name='to' value={to} onChange={Getto}>
-                        {Object.keys(CountryList).map((currencyCode) => (
-                        
-                        <option key={currencyCode} value={currencyCode}>
+              </div>
+              <div className='flex mt-8'>
+                <ImArrowRight className='fill-white' />
+              </div>
+              <div>
+                <p className='text-left font-medium text-white'>TO</p>
+                <div name='select' className='p-0.5 border-white border-2 flex rounded'>
+                  <img className='h-6 w-6' src={TOImg} alt="To Flag" />
+                  <select className='border-none text-black font-medium w-full' name='to' value={to} onChange={Getto}>
+                    {Object.keys(CountryList).map((currencyCode) => (
+                      <option key={currencyCode} value={currencyCode}>
                         {currencyCode}
-                        </option>
-                        ))}
-                        </select>
-
-                    </div>
-
+                      </option>
+                    ))}
+                  </select>
                 </div>
+              </div>
             </div>
-
+    
             <div name='output' className='m-1 flex flex-col justify-around'>
-                <p className='font-medium mb-0.5 text-white'>Date of Exchange Rate</p>
-                <input className='  border-white border-2 font-medium rounded p-0.5' value={date}  readOnly type="text" name="" id="" />
-                <p className='font-medium  mt-2  mb-0.5 text-white'>Exchange Value</p>
-                <input className='border-2 font-medium border-white mb-2 rounded p-0.5' value={rate}  readOnly type="text" name="" id="" />
-
-                {/* <button className=' mt-2 border-2 p-0.5 rounded' onClick={Convert}>Convert</button> */}
+              <p className='font-medium mb-0.5 text-white'>Date of Exchange Rate</p>
+              <input className='border-white border-2 font-medium rounded p-0.5 w-full' value={date} readOnly type="text" />
+              <p className='font-medium mt-2 mb-0.5 text-white'>Exchange Value</p>
+              <input className='border-2 font-medium border-white mb-2 rounded p-0.5 w-full' value={rate} readOnly type="text" />
             </div>
-            
-        
-      </form>
-       
-    </main>
-   )
-}
-
-export default App
+          </form>
+        </main>
+      );
+    };
+    
+    export default App;
