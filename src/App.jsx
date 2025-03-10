@@ -72,7 +72,7 @@ return (
             <div className='  border-white border-b-2 w-50  mt-1 ml-4'/>
             <div name='amount' className='m-1 mr-0.5'>
                 <p className=' text-white sfont-medium'>Enter Amount</p>
-                <input className='  border-white border-2 rounded p-0.5 mr-0.5'  placeholder='Enter Amount..' type="number" value={amount} onChange={fixamt}/>  
+                <input className='  border-white border-2 rounded p-0.5'  placeholder='Enter Amount..' type="number" value={amount} onChange={fixamt}/>  
             </div>
 
         
