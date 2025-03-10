@@ -1,45 +1,5 @@
 @import "tailwindcss";
 
-/* Base styles */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  
-  body {
-    font-family: 'Arial', sans-serif;
-  }
-  
-  /* Main container styles */
-  main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background: black url('https://www.pixelstalk.net/wp-content/uploads/2016/10/Dollar-Sign-HD-Wallpapers.jpg') no-repeat center center/cover;
-  }
-  
-  form {
-    padding: 1rem;
-    backdrop-filter: blur(10px);
-    border: 2px solid white;
-    border-radius: 8px;
-    width: 100%;
-    max-width: 400px;
-    box-sizing: border-box;
-  }
-  
-  /* Form elements */
-  input,
-  select {
-    width: 100%;
-    padding: 0.5rem;
-    margin-top: 0.5rem;
-    font-size: 1rem;
-    border: 2px solid white;
-    border-radius: 5px;
-  }
   
   /* Responsive design */
   @media (max-width: 640px) {
@@ -67,8 +27,14 @@
     .border-white {
       border-width: 1px;
     }
+
+    .w-23{
+        width: 25vmin;
+    }
+
+   
   }
-  
+/*   
   @media (min-width: 641px) and (max-width: 1024px) {
     form {
       width: 70%;
@@ -79,8 +45,8 @@
     }
   
     .flex {
-      flex-direction: row;
+      flex-direction:column;
       justify-content: space-between;
     }
   }
-  
+   */

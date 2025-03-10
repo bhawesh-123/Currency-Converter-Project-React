@@ -64,7 +64,7 @@ const App = () => {
     useEffect(()=>{Convertcurrency()},[amount,from,to])
     return (
         <main className='flex justify-center bg-black items-center min-h-screen bg-cover bg-center' style={{ backgroundImage: 'url(https://www.pixelstalk.net/wp-content/uploads/2016/10/Dollar-Sign-HD-Wallpapers.jpg)' }}>
-          <form action="#" className='p-4 backdrop-blur-sm border-white flex flex-col justify-around border-2 w-full sm:w-80 md:w-96 lg:w-1/3 box-border'>
+          <form action="#" className='p-4 backdrop-blur-sm border-white flex flex-col justify-around border-2 w-full sm:w-80  box-border'>
             <h3 className='text-white text-center text-2xl mt-3.5 font-medium'>Currency-Converter</h3>
             <div className='border-white border-b-2 w-full mt-1 ml-4' />
             
@@ -82,7 +82,7 @@ const App = () => {
             <div className='flex p-1 justify-between'>
               <div>
                 <p className='text-white text-left font-medium'>FROM</p>
-                <div name='select' className='p-0.5 border-white border-2 flex rounded'>
+                <div name='select' className='p-0.5 border-white border-2 flex rounded w-23'>
                   <img className='h-6 w-6' src={FromImg} alt="From Flag" />
                   <select className='text-black font-medium border-none w-full' name='from' value={from} onChange={Getfrom}>
                     {Object.keys(CountryList).map((countryCode) => (
@@ -98,7 +98,7 @@ const App = () => {
               </div>
               <div>
                 <p className='text-left font-medium text-white'>TO</p>
-                <div name='select' className='p-0.5 border-white border-2 flex rounded'>
+                <div name='select' className='p-0.5 border-white border-2 flex rounded w-23'>
                   <img className='h-6 w-6' src={TOImg} alt="To Flag" />
                   <select className='border-none text-black font-medium w-full' name='to' value={to} onChange={Getto}>
                     {Object.keys(CountryList).map((currencyCode) => (
