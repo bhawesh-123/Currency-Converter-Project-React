@@ -5,20 +5,20 @@ import { ImArrowRight } from "react-icons/im";
 const App = () => {
 
     // ---- amount usestate
-    let [amount,setamount]=useState(1);
+    let [amount,setamount]=useState("1");
     //------ From and To usestate ----------------------------------- 
     let [from,setfrom]=useState("USD");
     let [to,seto]=useState("INR");
     // ----------image change usestate
-    let [FromImg,setFromImg]=useState('https:/flagsapi.com/US/flat/64.png')
-    let [TOImg,setToImg]=useState('https:/flagsapi.com/IN/flat/64.png')
+    let [FromImg,setFromImg]=useState('https://flagsapi.com/US/flat/64.png')
+    let [TOImg,setToImg]=useState('https://flagsapi.com/IN/flat/64.png')
     // -----convert,date usestate----------
     let[rate,setrate]=useState('');
     let[date,setdate]=useState('');
     
     // ---function to set amount--------------------------------------
     let fixamt=(e)=>{
-        let amt=Math.max(1,e.target.value)
+        let amt=Math.max(0,e.target.value)
         setamount(amt);
     }
     // ----function to select to and from-----------------------------
@@ -72,7 +72,7 @@ return (
             <div className='  border-white border-b-2 w-50  mt-1 ml-4'/>
             <div name='amount' className='m-1 mr-0.5'>
                 <p className=' text-white sfont-medium'>Enter Amount</p>
-                <input className='  border-white border-2 rounded p-0.5 mr-0.5' type="number" value={amount} onChange={fixamt}/>  
+                <input className='  border-white border-2 rounded p-0.5 mr-0.5'  placeholder='Enter Amount..' type="number" value={amount} onChange={fixamt}/>  
             </div>
 
         
