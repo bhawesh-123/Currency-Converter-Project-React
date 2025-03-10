@@ -1,10 +1,32 @@
 @import "tailwindcss";
 
   
-  /* Responsive design */
+
+  .select{
+    display: flex;
+    justify-content: space-between;  
+    margin: 0.4vmin;
+  }
+
+  .TO-FROM{
+  
+    border:2x solid white;
+    display: flex;
+    padding: 0.5vmin;
+    border-radius: 1vmin;
+  }
+  
+  .custom-border{
+    border: 2px solid white;
+  }
+
+  
+  /* resposive design */
+
   @media (max-width: 640px) {
+    
     form {
-      width: 90%;
+      width: 55%;
     }
   
     h3 {
@@ -16,37 +38,34 @@
     }
   
     .flex {
-      flex-direction: column;
+      flex-direction:column;
       align-items: center;
     }
-  
+
     .m-1 {
-      margin: 0.5rem 0;
+      margin: 0.5rem ;
     }
   
     .border-white {
       border-width: 1px;
     }
 
-    .w-23{
-        width: 25vmin;
+    .select{
+      display: flex;
+      align-items:last baseline;
+
+
+
     }
 
-   
-  }
-/*   
-  @media (min-width: 641px) and (max-width: 1024px) {
-    form {
-      width: 70%;
+    .w-14{
+            width:52px;
     }
   
-    h3 {
-      font-size: 1.75rem;
-    }
+    .TO-FROM{
+      border: 2px solid white;
+      border-radius: 1vmin;
+      padding: 0.1vmin;
+     } 
   
-    .flex {
-      flex-direction:column;
-      justify-content: space-between;
-    }
-  }
-   */
+}
