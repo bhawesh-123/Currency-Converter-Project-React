@@ -63,15 +63,15 @@ const App = () => {
 
     useEffect(()=>{Convertcurrency()},[amount,from,to])
     return (
-        <main className='flex justify-center items-center min-h-screen bg-cover bg-center' style={{ backgroundImage: 'url(https://www.pixelstalk.net/wp-content/uploads/2016/10/Dollar-Sign-HD-Wallpapers.jpg)' }}>
+        <main className='flex justify-center items-center min-h-screen bg-cover bg-center' style={{ backgroundImage: 'url(https://png.pngtree.com/background/20231016/original/pngtree-3d-rendering-of-bank-card-and-currency-conversion-picture-image_5573978.jpg)' }}>
           <form action="#" className='p-4 backdrop-blur-sm flex flex-col justify-around custom-border rounded w-full sm:w-80  box-border'>
-            <h3 className='text-white text-center text-2xl mt-3.5 font-medium'>Currency-Converter</h3>
+            <h3 className='text-black text-center text-3xl mt-3.5  font-medium'>Currency-Converter</h3>
             <div className='border-white border-b-2 w-full mt-1 ml-4' />
             
             <div name='amount' className='m-1 mr-0.5'>
-              <p className='text-white font-medium'>Enter Amount</p>
+              <p className='text-white  text-2xl font-light m-1 ml-0'>Enter Amount</p>
               <input
-                className='custom-border rounded p-0.5 w-full'
+                className='custom-border text-white  font-medium text-xl rounded p-0.5 pl-1 w-full'
                 placeholder='Enter Amount..'
                 type="number"
                 value={amount}
@@ -84,9 +84,9 @@ const App = () => {
                 <p className='text-white text-left font-medium'>FROM</p>
                 <div name='select' className='custom-border TO-FROM'>
                   <img className='h-6 w-6' src={FromImg} alt="From Flag" />
-                  <select className=' text-black font-medium border-none w-14' name='from' value={from} onChange={Getfrom}>
+                  <select className=' text-white font-medium border-none w-14 outline-none' name='from' value={from} onChange={Getfrom}>
                     {Object.keys(CountryList).map((countryCode) => (
-                      <option key={countryCode} value={countryCode}>
+                      <option  className='text-black' key={countryCode} value={countryCode}>
                         {countryCode}
                       </option>
                     ))}
@@ -100,9 +100,9 @@ const App = () => {
                 <p className='text-left font-medium text-white'>TO</p>
                 <div name='select' className=' custom-border TO-FROM'>
                   <img className='h-6 w-6' src={TOImg} alt="To Flag" />
-                  <select className=' text-black font-medium w-14' name='to' value={to} onChange={Getto}>
+                  <select className=' text-white font-medium w-14 outline-none' name='to' value={to} onChange={Getto}>
                     {Object.keys(CountryList).map((currencyCode) => (
-                      <option key={currencyCode} value={currencyCode}>
+                      <option className='text-black ' key={currencyCode} value={currencyCode}>
                         {currencyCode}
                       </option>
                     ))}
@@ -112,10 +112,10 @@ const App = () => {
             </div>
     
             <div name='output' className='m-1 flex flex-col justify-around'>
-              <p className='font-medium mb-0.5 text-white'>Date of Exchange Rate</p>
-              <input className='custom-border font-medium rounded p-0.5 w-full' value={date} readOnly type="text" />
-              <p className='font-medium mt-2 mb-0.5 text-white'>Exchange Value</p>
-              <input className='custom-border font-medium rounded p-0.5 w-full' value={rate} readOnly type="text" />
+              <p className='font-400 text-xl mb-0.5 text-white'>Date of Exchange Rate</p>
+              <input className='custom-border text-xl text-white pl-2 font-500 rounded p-0.5 w-full' value={date} readOnly type="text" />
+              <p className='font-400  text-xl mt-2 mb-0.5 text-white'>Exchange Value</p>
+              <input className='custom-border text-xl font-500 pl-2 text-white rounded p-0.5 w-full' value={rate} readOnly type="text" />
             </div>
           </form>
         </main>
